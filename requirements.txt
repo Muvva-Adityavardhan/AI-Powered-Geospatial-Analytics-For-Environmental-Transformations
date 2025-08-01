@@ -1,0 +1,11 @@
+# requirements.txt
+pandas
+numpy
+plotly
+streamlit
+requests
+google-generativeai
+earthengine-api
+geemap
+geopandas
+python-dotenv
