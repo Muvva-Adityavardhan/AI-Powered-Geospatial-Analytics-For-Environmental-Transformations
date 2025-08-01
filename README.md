@@ -110,7 +110,7 @@ Follow these steps to set up the project locally.
 ### 2. Clone the Repository
 Clone this repository to your local machine.
 ```bash
-git clone [https://github.com/Muvva-Adityavardhan/AI-Powered-Geospatial-Analytics-For-Environmental-Transformations.git](https://github.com/Muvva-Adityavardhan/AI-Powered-Geospatial-Analytics-For-Environmental-Transformations.git)
+git clone https://github.com/Muvva-Adityavardhan/AI-Powered-Geospatial-Analytics-For-Environmental-Transformations.git
 cd AI-Powered-Geospatial-Analytics-for-Environmental-Transformations
 ```
 
