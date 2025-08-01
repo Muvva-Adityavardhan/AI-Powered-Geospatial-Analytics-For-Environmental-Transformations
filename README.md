@@ -11,7 +11,11 @@ The system enables users to query environmental metrics (e.g., NDVI, NBR, EVI, M
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Results](#results)
+- [System Architecture](#system-architecture)
 - [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
 
 ---
 
@@ -62,7 +66,7 @@ The system processes queries like "How has forest cover evolved in Telangana ove
 
 ---
 
-## Initial Results
+## Results
 
 The system was tested with various queries to validate its functionality and accuracy in processing environmental data. Below are key results showcasing the system's ability to generate textual reports, interactive visualizations, and geospatial maps:
 
@@ -83,7 +87,32 @@ The system was tested with various queries to validate its functionality and acc
 
 These results demonstrate the system's capability to handle complex queries, deliver actionable insights, and visualize geospatial data effectively.
 
+---
+
+## System Architecture
+The application follows a modular, multi-stage architecture to process user requests:
+1.  **UI Layer (Streamlit)**: Captures user input via a chat interface.
+2.  **Parsing & Orchestration**: The main `main.py` module uses utility functions to extract keywords (states, years, metrics) from the query.
+3.  **Data Retrieval (Mistral)**: A call is made to the Mistral-saba API to parse numerical data from the pre-compiled text-based `CORPUS` files.
+4.  **Report Generation (Gemini)**: The extracted data is sent to the Gemini API to generate a qualitative, descriptive report.
+5.  **Visualization (Plotly)**: The numerical data is used to create interactive charts.
+6.  **Mapping (GEE)**: A separate thread generates geospatial maps using Google Earth Engine, ensuring the UI remains responsive.
+
+---
+
 ## Installation
-Follow these steps to set up the project locally:
+Follow these steps to set up the project locally.
+
+### 1. Prerequisites
+- Python 3.8 or higher.
+- A Google account authenticated with Google Earth Engine.
+- API keys for **Mistral** and **Google AI (Gemini)**.
+
+### 2. Clone the Repository
+Clone this repository to your local machine.
+```bash
+git clone [https://github.com/your-username/AI-Powered-Geospatial-Analytics-for-Environmental-Transformations.git](https://github.com/your-username/AI-Powered-Geospatial-Analytics-for-Environmental-Transformations.git)
+cd AI-Powered-Geospatial-Analytics-for-Environmental-Transformations
+```
 
 ** WORK IN PROGRESS, WILL UPDATE ONCE COMPLETED **
