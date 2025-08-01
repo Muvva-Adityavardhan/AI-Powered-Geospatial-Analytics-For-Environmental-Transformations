@@ -15,7 +15,6 @@ The system enables users to query environmental metrics (e.g., NDVI, NBR, EVI, M
 - [System Architecture](#system-architecture)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 
 ---
 
@@ -115,4 +114,36 @@ git clone [https://github.com/your-username/AI-Powered-Geospatial-Analytics-for-
 cd AI-Powered-Geospatial-Analytics-for-Environmental-Transformations
 ```
 
-** WORK IN PROGRESS, WILL UPDATE ONCE COMPLETED **
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+You need to provide your secret API keys to the application.
+
+- Create a file named `.env` in the root directory of the project.
+- Add your API keys to this file in the following format:
+
+```plaintext
+# .env file
+MISTRAL_API_KEY="your_mistral_api_key_here"
+GEMINI_API_KEY="your_gemini_api_key_here"
+MISTRAL_API_URL="your_mistral_api_url_here"
+```
+
+### 5. Google Earth Engine Authentication
+The first time you run the application, you may need to authenticate with Google Earth Engine. Run the following command in your terminal and follow the on-screen instructions to sign in with your Google account.
+```bash
+earthengine authenticate
+```
+
+## Usage
+Once the installation is complete, you can run the Streamlit application with a single command:
+```bash
+streamlit run main.py
+```
+
+## 📫 Feel Free to Contact Me
+I would love to listen to your ideas...
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/madityavardhan/)
