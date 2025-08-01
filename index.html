@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Insights</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 20, 40, 0.5), rgba(0, 50, 80, 0.7));
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 1.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .hover-btn {
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            color: #fff;
+            background: linear-gradient(135deg, #1e90ff, #00ced1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px; /* Rectangular shape */
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            display: inline-block; /* Ensures proper positioning */
+        }
+
+        .hover-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #00ced1, #1e90ff);
+        }
+
+        .hover-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            visibility: hidden;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10; /* Increased z-index to ensure it’s on top */
+            bottom: calc(100% + 10px); /* Position above with spacing */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Smooth fade-in */
+        }
+
+        .hover-btn:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s ease, visibility 0s linear 0s; /* Instant visibility on hover */
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Earth Insights</h1>
+        <div class="subtitle">Explore Environmental Data with Ease</div>
+        <div class="button-wrapper">
+            <button class="hover-btn" onclick="openChatbot()">
+                Environmental Chatbot
+                <span class="tooltip">
+                    This chatbot provides environmental insights using Sentinel-2 and Dynamic World data. Analyze metrics like NDVI, NBR, and land cover for Indian states, powered by Earth Engine. Get detailed reports and visualizations for any year!
+                </span>
+            </button>
+            <button class="hover-btn" onclick="openFeature()">Future Feature</button>
+        </div>
+    </div>
+    <div class="footer">Powered by xAI | © 2025 Earth Insights</div>
+
+    <script>
+        // Open Chatbot in a new window
+        function openChatbot() {
+            window.open('http://localhost:8501', '_blank', 'width=1000,height=700,scrollbars=yes,resizable=yes');
+        }
+
+        // Open placeholder feature in a new window
+        function openFeature() {
+            const featureWindow = window.open('', '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+            featureWindow.document.write(`
+                <html>
+                <head><title>Future Feature</title></head>
+                <body style="font-family: Poppins, sans-serif; text-align: center; padding: 50px; background: #f0f4f8; color: #333;">
+                    <h2>Exciting Feature Coming Soon!</h2>
+                    <p>Stay tuned for more environmental analysis tools.</p>
+                </body>
+                </html>
+            `);
+            featureWindow.document.close();
+        }
+
+        // Particle animation for subtle background effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 5 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 10000);
+        }
+
+        // Generate particles periodically
+        setInterval(createParticle, 500);
+
+        // Initial burst of particles
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 100);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+import streamlit as st
+
+# Page config
+st.set_page_config(page_title="Fixed Chat Input", layout="wide")
+
+# Custom CSS with dynamic height
+st.markdown("""
+    <style>
+        .chat-container {
+            min-height: 50px;  /* Start small */
+            max-height: 75vh;  /* Cap it */
+            overflow-y: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        /* Hide footer if it’s in the way */
+        footer {visibility: hidden;}
+        /* Ensure no extra padding pushes content */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Initialize messages
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Chat container
+st.markdown("<div class='chat-container'>", unsafe_allow_html=True)
+if not st.session_state.messages:
+    st.write("Start typing below to see messages!")
+for msg in st.session_state.messages:
+    st.markdown(f"*You:* {msg}")
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Fixed input at bottom
+user_input = st.chat_input("Type your message here...")
+
+# Process input
+if user_input:
+    st.session_state.messages.append(user_input)
+    st.rerun()
+    
+    
+    
+    
+    
+    
+    -->
