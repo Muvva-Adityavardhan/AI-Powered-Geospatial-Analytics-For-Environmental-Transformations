@@ -11,7 +11,7 @@ load_dotenv()
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 MISTRAL_API_URL = os.getenv("MISTRAL_API_URL")
-EE_PROJECT = 'ee-muvvaadityavardhan'
+EE_PROJECT = os.getenv("EE-PROJECT")
 
 # --- File and Folder Paths ---
 CORPUS_FOLDER = "./CORPUS"
@@ -73,4 +73,5 @@ NBR_CAPTION = ( "NBR Color Mapping:\n- Red: Low NBR (< -0.3)\n- White: Neutral N
 NDMI_LEGEND = { "title": "NDMI (Moisture Index)", "labels": ["Low (< -0.2)", "Neutral (-0.2 to 0.2)", "High (> 0.2)"], "colors": ["brown", "white", "blue"] }
 NDMI_CAPTION = ( "NDMI Color Mapping:\n- Brown: Low NDMI (< -0.2)\n- White: Neutral NDMI (-0.2 to 0.2)\n- Blue: High NDMI (> 0.2)" )
 MNDWI_LEGEND = { "title": "MNDWI (Water Index)", "labels": ["Low (< -0.2)", "Neutral (-0.2 to 0.2)", "High (> 0.2)"], "colors": ["brown", "white", "blue"] }
+
 MNDWI_CAPTION = ( "MNDWI Color Mapping:\n- Brown: Low MNDWI (< -0.2)\n- White: Neutral MNDWI (-0.2 to 0.2)\n- Blue: High MNDWI (> 0.2)" )
