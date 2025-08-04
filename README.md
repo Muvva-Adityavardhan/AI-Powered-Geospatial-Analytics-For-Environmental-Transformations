@@ -130,6 +130,7 @@ You need to provide your secret API keys to the application.
 MISTRAL_API_KEY="your_mistral_api_key_here"
 GEMINI_API_KEY="your_gemini_api_key_here"
 MISTRAL_API_URL="your_mistral_api_url_here"
+EE-PROJECT="your_gee_project_id"
 ```
 
 ### 5. Google Earth Engine Authentication
