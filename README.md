@@ -1,5 +1,6 @@
 # AI-Powered-Geospatial-Analytics-for-Environmental-Transformations
 
+📖 If you use this project in your research, please cite it as described in the [CITATION.cff](CITATION.cff) file.
 
 This repository contains the source code for a Mini Project developed. The project, titled **"AI-Powered Geospatial Analytics for Environmental Transformations"**, integrates advanced large language models (LLMs) like Mistral-saba and Gemini with Google Earth Engine (GEE) to monitor and analyze environmental changes across India from 2015 to 2025.
 
