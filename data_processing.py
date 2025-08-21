@@ -1,7 +1,6 @@
 # data_processing.py
 """
 Functions for generating reports and Plotly visualizations.
-The generate_visualization function is copied verbatim from the original script.
 """
 import os
 import re
