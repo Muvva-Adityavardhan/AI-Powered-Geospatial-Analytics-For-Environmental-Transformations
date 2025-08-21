@@ -1,7 +1,6 @@
 # map_generator.py
 """
 Functions for Google Earth Engine (GEE) initialization and map generation.
-All functions are copied verbatim from the original script.
 """
 import os
 import time
