@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+authors:
+- family-names: "Muvva"
+  given-names: "Adityavardhan"
+  orcid: "https://orcid.org/0009-0008-0489-2188"
+title: "AI-Powered Geospatial Analytics For Environmental Transformations"
+version: 1.0.0
+date-released: 2025-06-10
+url: "https://github.com/Muvva-Adityavardhan/AI-Powered-Geospatial-Analytics-For-Environmental-Transformations"
