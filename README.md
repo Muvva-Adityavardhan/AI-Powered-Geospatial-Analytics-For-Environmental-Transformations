@@ -8,6 +8,19 @@ The system enables users to query environmental metrics (e.g., NDVI, NBR, EVI, M
 
 ---
 
+## Team Collaboration
+
+This project was developed collaboratively as a team effort.  
+We worked together to design the architecture, implement geospatial data pipelines, integrate large language models, and build a user-friendly interface.  
+
+This teamwork made it possible to bring the project to life effectively and efficiently.
+
+### Team Members
+- [Muvva Adityavardhan](https://github.com/Muvva-Adityavardhan)
+- [Kaushal Kulkarni](https://github.com/kaushal-345)
+
+
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
